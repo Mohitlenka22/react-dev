@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Kanit:wght@300&family=M+PLUS+Rounded+1c:wght@500&family=Poppins&family=Roboto:wght@300;400&family=Ubuntu&display=swap');
+* {
+  margin: 0px;
+  box-sizing: border-box;
+  font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Kanit', sans-serif;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Ubuntu', sans-serif;
+}
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 100%;
+  width: 19%;
+  font-size: small;
+  padding: 10px 10px;
+  margin-top: 2rem;
+  margin-left: 4rem;
+  margin-right: 0.5rem;
+}
+
+.card-container > img {
+  width: 250px;
+  height: 180px;
+  border-radius: 8px;
+}
+
+.card-container > ul {
+  list-style: none;
+  padding: 0px;
+}
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 10px;
+}
+
+.navbar > ul{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+  list-style: none;
+}
