@@ -19,7 +19,7 @@ const Body = () => {
     const data = await fetch('https://www.swiggy.com/mapi/homepage/getCards?lat=17.6847037&lng=83.2149637');
     const json = await data.json();
     // Optional chaining
-    console.log(await json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+    // console.log(await json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
     setRestaurants(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
   }
   useEffect(() => {

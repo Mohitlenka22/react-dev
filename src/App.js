@@ -53,11 +53,13 @@ const HeadingComponent2 = () => (
 import Header from './Components/Header';
 import Body from './Components/Body';
 import Footer from './Components/Footer'; // Defaults imports
+import UserClass from './Components/UserClass';
 
 const App = () => {
   return (
     <>
       {/* React.Fragment */}
+      <UserClass />
       <Header />
       <Body />
       <Footer />
