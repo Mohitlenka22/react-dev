@@ -59,10 +59,10 @@ const App = () => {
   return (
     <>
       {/* React.Fragment */}
-      <UserClass />
       <Header />
       <Body />
       <Footer />
+      <UserClass />
     </>
   );
 };

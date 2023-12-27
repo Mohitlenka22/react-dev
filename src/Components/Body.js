@@ -16,32 +16,34 @@ const Body = () => {
 
   // liveData
   async function getRestaurants() {
-    const data = await fetch('https://www.swiggy.com/mapi/homepage/getCards?lat=17.6847037&lng=83.2149637');
+    const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.6847037&lng=83.2149637&page_type=DESKTOP_WEB_LISTING');
     const json = await data.json();
     // Optional chaining
-    // console.log(await json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
-    setRestaurants(json?.data?.success?.cards[4]?.gridWidget?.gridElements?.infoWithStyle?.restaurants);
+    console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
   useEffect(() => {
     getRestaurants();
+
+    return () => {}; // cleanup
   }, []); // onMount
 
   return (
     // Conditional rendering
-    filteredRestaurants.length == 0 ? (
-      <Shimmer />
-    ) : (
-      <>
-        <div className="search-bar">
-          <input type="search" placeholder="search🔍" value={searchInput} onChange={e => setSearchInput(e.target.value)} />
-        </div>
+    <>
+      <div className="search-bar">
+        <input type="search" placeholder="search🔍" value={searchInput} onChange={e => setSearchInput(e.target.value)} />
+      </div>
+      {filteredRestaurants.length == 0 ? (
+        <Shimmer />
+      ) : (
         <div className="restaurant-list">
           {filteredRestaurants.map(restaurant => {
             return <RestaurantCard {...restaurant.info} key={restaurant.info.id} />;
           })}
         </div>
-      </>
-    )
+      )}
+    </>
   );
 };
 
