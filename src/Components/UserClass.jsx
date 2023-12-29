@@ -10,7 +10,7 @@ class UserClass extends Component {
   }
 
   componentDidMount() {}
-  componentDidUpdate() {}
+  componentDidUpdate() {} 
   componentWillUnmount() {} 
 
   render() {

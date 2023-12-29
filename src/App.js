@@ -53,18 +53,49 @@ const HeadingComponent2 = () => (
 import Header from './Components/Header';
 import Body from './Components/Body';
 import Footer from './Components/Footer'; // Defaults imports
+import About from './Components/About';
 import UserClass from './Components/UserClass';
+import { createBrowserRouter, Outlet } from 'react-router-dom';
+import Contact from './Components/Contact';
+import RestaurantMenu from './Components/RestaurantMenu';
+import Error from './Components/Error';
 
 const App = () => {
   return (
     <>
       {/* React.Fragment */}
       <Header />
-      <Body />
+      <Outlet />
       <Footer />
-      <UserClass />
+      {/* <UserClass /> */}
     </>
   );
 };
 
-export default App;
+const appRouter = createBrowserRouter([
+  {
+    path: '/',
+    element: <App />,
+    errorElement: <Error />,
+    children: [
+      {
+        path: '/',
+        element: <Body />,
+      },
+      {
+        path: '/about',
+        element: <About />,
+      },
+      {
+        path: '/contact',
+        element: <Contact />,
+      },
+      {
+        path: '/restaurant/:id',
+        element: <RestaurantMenu />,
+      },
+    ],
+  },
+]);
+
+export { appRouter };

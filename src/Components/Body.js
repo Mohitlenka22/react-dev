@@ -4,9 +4,7 @@ import RestaurantCard from './RestaurantCard';
 import Shimmer from './Shimmer';
 
 function filterRestaurants(restaurants, searchInput) {
-  return restaurants.filter(restaurant => {
-    return restaurant.info.name.toLowerCase().includes(searchInput.toLowerCase());
-  });
+  return restaurants.filter(restaurant => restaurant.info.name.toLowerCase().includes(searchInput.toLowerCase()));
 }
 
 const Body = () => {
@@ -19,8 +17,8 @@ const Body = () => {
     const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.6847037&lng=83.2149637&page_type=DESKTOP_WEB_LISTING');
     const json = await data.json();
     // Optional chaining
-    console.log(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-    setRestaurants(json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+    setRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
   }
   useEffect(() => {
     getRestaurants();
