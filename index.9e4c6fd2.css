@@ -1,0 +1,53 @@
+@import "https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Kanit:wght@300&family=M+PLUS+Rounded+1c:wght@500&family=Poppins&family=Roboto:wght@300;400&family=Ubuntu&display=swap";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Ubuntu, sans-serif;
+}
+
+.card-container {
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 19%;
+  height: 100%;
+  margin-top: 2rem;
+  margin-left: 4rem;
+  margin-right: .5rem;
+  padding: 10px;
+  font-size: small;
+  display: flex;
+}
+
+.card-container > img {
+  border-radius: 8px;
+  width: 250px;
+  height: 180px;
+}
+
+.card-container > ul {
+  padding: 0;
+  list-style: none;
+}
+
+.restaurant-list {
+  flex-wrap: wrap;
+  margin: 10px;
+  display: flex;
+}
+
+.navbar > ul {
+  flex-flow: wrap;
+  justify-content: space-around;
+  align-items: center;
+  margin: 10px;
+  list-style: none;
+  display: flex;
+}
+
+.search-bar {
+  justify-content: center;
+  margin-top: 5rem;
+  display: flex;
+}
+
+/*# sourceMappingURL=index.9e4c6fd2.css.map */

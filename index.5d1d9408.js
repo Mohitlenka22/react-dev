@@ -660,6 +660,6 @@ _.useEffect(()=>{!u.isTransitioning&&h&&(i(h.state),s({isTransitioning:!0,flushS
 // useId relies on the component tree structure to generate deterministic id's
 // so we need to ensure it remains the same on the client even though
 // we don't need the <script> tag
-return /*#__PURE__*/_.createElement(_.Fragment,null,/*#__PURE__*/_.createElement(eI.Provider,{value:S},/*#__PURE__*/_.createElement(eA.Provider,{value:a},/*#__PURE__*/_.createElement(te.Provider,{value:v.current},/*#__PURE__*/_.createElement(e9.Provider,{value:u},/*#__PURE__*/_.createElement(e6,{basename:k,location:a.location,navigationType:a.historyAction,navigator:w,future:{v7_relativeSplatPath:n.future.v7_relativeSplatPath}},a.initialized||n.future.v7_partialHydration?/*#__PURE__*/_.createElement(tl,{routes:n.routes,future:n.future,state:a}):t))))),null)},{router:tv}));//# sourceMappingURL=index.d1d5b95e.js.map
+return /*#__PURE__*/_.createElement(_.Fragment,null,/*#__PURE__*/_.createElement(eI.Provider,{value:S},/*#__PURE__*/_.createElement(eA.Provider,{value:a},/*#__PURE__*/_.createElement(te.Provider,{value:v.current},/*#__PURE__*/_.createElement(e9.Provider,{value:u},/*#__PURE__*/_.createElement(e6,{basename:k,location:a.location,navigationType:a.historyAction,navigator:w,future:{v7_relativeSplatPath:n.future.v7_relativeSplatPath}},a.initialized||n.future.v7_partialHydration?/*#__PURE__*/_.createElement(tl,{routes:n.routes,future:n.future,state:a}):t))))),null)},{router:tv}));//# sourceMappingURL=index.5d1d9408.js.map
 
-//# sourceMappingURL=index.d1d5b95e.js.map
+//# sourceMappingURL=index.5d1d9408.js.map
