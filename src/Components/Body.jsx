@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import { restaurantList } from '../constants'; // Named Import
+import { restaurantList } from '../utils/constants'; // Named Import
 import RestaurantCard from './RestaurantCard';
 import Shimmer from './Shimmer';
+import { Link } from 'react-router-dom';
 
 function filterRestaurants(restaurants, searchInput) {
   return restaurants.filter(restaurant => restaurant.info.name.toLowerCase().includes(searchInput.toLowerCase()));
@@ -14,8 +15,11 @@ const Body = () => {
 
   // liveData
   async function getRestaurants() {
-    const data = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.6847037&lng=83.2149637&page_type=DESKTOP_WEB_LISTING');
+    const data = await fetch(
+      'https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.6847037&lng=83.2149637&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING'
+    );
     const json = await data.json();
+    console.log(json);
     // Optional chaining
     console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
     setRestaurants(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
@@ -37,7 +41,11 @@ const Body = () => {
       ) : (
         <div className="restaurant-list">
           {filteredRestaurants.map(restaurant => {
-            return <RestaurantCard {...restaurant.info} key={restaurant.info.id} />;
+            return (
+              <Link key={restaurant.info.id} to={'/restaurant/' + restaurant?.info?.id}>
+                <RestaurantCard {...restaurant?.info} />
+              </Link>
+            );
           })}
         </div>
       )}

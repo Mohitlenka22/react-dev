@@ -1,6 +1,6 @@
-import { URL } from '../constants';
+import { URL } from '../utils/constants';
 
-const RestaurantCard = ({ name, cloudinaryImageId, areaName, cuisines, avgRating }) => {
+const RestaurantCard = ({ name, cloudinaryImageId, areaName, cuisines, avgRating, id }) => {
   return (
     <div className="card-container">
       <img src={`${URL}${cloudinaryImageId}`} alt="" />
@@ -11,6 +11,7 @@ const RestaurantCard = ({ name, cloudinaryImageId, areaName, cuisines, avgRating
         <li>{`⭐️${avgRating}`}</li>
         <li>{areaName}</li>
         <li>{cuisines.join(', ')}</li>
+        <li>{id}</li>
       </ul>
     </div>
   );
