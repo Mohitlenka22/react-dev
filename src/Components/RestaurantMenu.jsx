@@ -1,33 +1,39 @@
-import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { URL } from '../utils/constants';
+import { IMG_URL } from '../utils/constants';
+import Shimmer from './Shimmer';
+import useRestaurantMenu from '../utils/useRestaurantMenu';
 
 const RestaurantMenu = () => {
   const { id } = useParams();
-  const [restaurant, setRestaurant] = useState();
-  console.log('ff');
-  useEffect(() => {
-    getRestaurantInfo();
-  }, []);
+  const [restaurant, items] = useRestaurantMenu(id);
 
-  async function getRestaurantInfo() {
-    const data = await fetch(
-      `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.6847037&lng=83.2149637&restaurantId=${id}&catalog_qa=undefined&submitAction=ENTER`
-    );
-    const json = await data.json();
-    console.log(json?.data?.cards[0]?.card?.card?.info);
-    setRestaurant(await json?.data?.cards[0]?.card?.card?.info);
-    console.log(restaurant);
-  }
   return (
     <>
-      <h1>RestaurantMenu: {id}</h1>
-      <img src={URL + restaurant?.cloudinaryImageId} alt="" />
+      <div>
+        <h1>Restaurant id: {id}</h1>
+        <br />
+        <img className="RestaurantLogo" src={IMG_URL + restaurant?.cloudinaryImageId} alt="RESTAURANT LOGO" />
+        <br />
+        {console.log(restaurant?.name)}
+        <h2> {restaurant?.name}</h2>
+        <h2> {restaurant?.city}</h2>
+        <h2> {restaurant?.locality}</h2>
+        <h3> {restaurant?.areaName}</h3>
+        <h3> {restaurant?.avgRating + '⭐'}</h3>
+        <h3> {restaurant?.costForTwoMessage}</h3>
+      </div>
       <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        {!items ? (
+          <Shimmer />
+        ) : (
+          items?.map(item => {
+            return (
+              <li key={item.card.info.id}>
+                <h2 className="menu-names">{item.card.info.name} </h2>{' '}
+              </li>
+            );
+          })
+        )}
       </ul>
     </>
   );

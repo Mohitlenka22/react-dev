@@ -1,5 +1,7 @@
 // Also we can rename it as config.js , to store hardcoded things like urls, data etc..,
-export const URL = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/';
+export const IMG_URL = 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/';
+
+export const RESTAURANT_URL = 'https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.501976&lng=80.639227&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING';
 
 export const restaurantList = [
   {

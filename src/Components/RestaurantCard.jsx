@@ -1,10 +1,10 @@
-import { URL } from '../utils/constants';
+import { IMG_URL } from '../utils/constants';
 
 const RestaurantCard = ({ name, cloudinaryImageId, areaName, cuisines, avgRating, id }) => {
   return (
     <div className="card-container">
-      <img src={`${URL}${cloudinaryImageId}`} alt="" />
-      <ul>
+      <img className='card-img' src={`${IMG_URL}${cloudinaryImageId}`} alt="" />
+      <ul className='card-content'>
         <li>
           <h2>{name}</h2>
         </li>
