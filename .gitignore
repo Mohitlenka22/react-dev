@@ -52,3 +52,5 @@ Thumbs.db
 #parcel files
 .parcel-cache/
 dist/
+
+.vscode
