@@ -30,7 +30,9 @@ const Body = () => {
       {filteredRestaurants.length == 0 ? (
         <Shimmer />
       ) : (
-        <div className="restaurant-list">
+        <div className="flex flex-wrap justify-between m-4">
+          {' '}
+          {/* restaurant-list */}
           {filteredRestaurants.map(restaurant => {
             return (
               <Link key={restaurant?.info?.id} to={'/restaurant/' + restaurant?.info?.id}>

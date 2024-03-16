@@ -1,4 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Kanit:wght@300&family=M+PLUS+Rounded+1c:wght@500&family=Poppins&family=Roboto:wght@300;400&family=Ubuntu&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&family=Kanit:wght@300&family=M+PLUS+Rounded+1c:wght@500&family=Poppins&family=Roboto:wght@300;400&family=Ubuntu&display=swap');
 * {
   margin: 0px;
   box-sizing: border-box;
@@ -67,4 +72,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-}
+} */
+
+

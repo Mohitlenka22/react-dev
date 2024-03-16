@@ -4,8 +4,8 @@ const title = <h1> Food villa </h1>;
 
 const Header = () => {
   return (
-    <div className="navbar">
-      <ul>
+    <div className='m-2.5 '> {/* navbar */}
+      <ul className="flex justify-between">
         {title}
         <li>
           <Link to="/">Home</Link>
